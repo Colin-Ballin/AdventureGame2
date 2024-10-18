@@ -12,7 +12,7 @@ public class player{
         this.name = name;
     }
 
-    public int takeDamage(int damage){
+    public void takeDamage(int damage){
         health -= damage;
     }
 
@@ -24,7 +24,7 @@ public class player{
         return level;
     }
 
-    public int getName(){
+    public String getName(){
         return name;
     }
 
