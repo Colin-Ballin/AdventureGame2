@@ -13,6 +13,8 @@ public class card {
     // string is assocaited with a number you accuesss using a hashmap which
     // removes the usevalue int
 
+
+    
     // list of different effects include
     // Damage (deal damage)---- Block (temp shield blocking damage)
     // Draw (draw a card)---- Heal(gain heath)
