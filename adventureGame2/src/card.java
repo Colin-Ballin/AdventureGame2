@@ -80,11 +80,20 @@ public class card {
         return cost;
     }
 
+    @Override
+    public String toString(){
+        String description = "";
+        int len = functions.length;
+        for(int x = 0; x < len; x ++){
+            description = functions[x] + ": " + useValues.get(functions[x]) + " ";
+        }
 
+        return "Cost: " + cost + " Element: " + element + " Name: " + name + " " + description;
+    }
     public static void makingCards(){
         // Basic cards
         HashMap<String, Integer> strikeStats = new HashMap<>();
-        strikeStats.put("Damage", 10);
+        strikeStats.put("Damage", 100);
         String[] strikeFunctions = {"Damage"};
         card strike = new card("Null", "Strike", strikeFunctions, strikeStats, 1);
 
@@ -92,7 +101,7 @@ public class card {
 
 
         HashMap<String, Integer> blockStats = new HashMap<>();
-        strikeStats.put("Block", 8);
+        strikeStats.put("Block", 80);
         String[] blockFunctions = {"Block"};
         card block = new card("Null", "Block", blockFunctions, blockStats, 1);
 
@@ -109,10 +118,10 @@ public class card {
 
 
         HashMap<String, Integer> bombStats = new HashMap<>();
-        bombStats.put("Damage", 50);
-        bombStats.put("Area", 1);
-        String[] bombFunctions = {"Draw"};
-        card bomb = new card("Null", "Bomb", bombFunctions, bombStats, 4);
+        bombStats.put("Damage", 500);
+
+        String[] bombFunctions = {"Damage"};
+        card bomb = new card("Null", "Bomb", bombFunctions, bombStats, 2);
 
 
 
@@ -121,7 +130,7 @@ public class card {
 
 
         HashMap<String, Integer> emberStats = new HashMap<>();
-        emberStats.put("Damage", 5);
+        emberStats.put("Damage", 50);
         String[] emberFunctions = {"Damage"};
         card ember = new card("Fire", "Ember", emberFunctions, emberStats, 0);
 
@@ -129,8 +138,8 @@ public class card {
 
 
         HashMap<String, Integer> flameStats = new HashMap<>();
-        flameStats.put("Damage", 10);
-        flameStats.put("Burn", 1);
+        flameStats.put("Damage", 100);
+        flameStats.put("Burn", 10);
         String[] flameFunctions = {"Damage", "Burn"};
         card flame = new card("Fire", "Flame", flameFunctions, flameStats, 1);
 
@@ -138,8 +147,8 @@ public class card {
 
 
         HashMap<String, Integer> fireballStats = new HashMap<>();
-        fireballStats.put("Damage", 20);
-        fireballStats.put("Burn", 3);
+        fireballStats.put("Damage", 200);
+        fireballStats.put("Burn", 30);
         String[] fireballFunctions = {"Damage", "Burn"};
         card fireball = new card("Fire", "Fireball", fireballFunctions, fireballStats, 2);
 
@@ -147,8 +156,8 @@ public class card {
 
 
         HashMap<String, Integer> wallOfFireStats = new HashMap<>();
-        wallOfFireStats.put("Block", 30);
-        wallOfFireStats.put("Burn", 4);
+        wallOfFireStats.put("Block", 300);
+        wallOfFireStats.put("Burn", 40);
         String[] wallOfFireFunctions = {"Damage", "Burn"};
         card wallOfFire = new card("Fire", "Wall Of Fire", wallOfFireFunctions, wallOfFireStats, 3);
 
@@ -156,8 +165,8 @@ public class card {
 
 
         HashMap<String, Integer> eruptionStats = new HashMap<>();
-        eruptionStats.put("Damage", 100);
-        eruptionStats.put("Burn", 10);
+        eruptionStats.put("Damage", 1000);
+        eruptionStats.put("Burn", 100);
         String[] eruptionFunctions = {"Damage", "Burn"};
         card eruption = new card("Fire", "Eruption", eruptionFunctions, eruptionStats, 4);
 
@@ -165,8 +174,8 @@ public class card {
 
 
         HashMap<String, Integer> blazingHellStats = new HashMap<>();
-        blazingHellStats.put("Damage", 200);
-        blazingHellStats.put("Burn", 30);
+        blazingHellStats.put("Damage", 2000);
+        blazingHellStats.put("Burn", 300);
         String[] blazingHellFunctions = {"Damage", "Burn"};
         card blazingHell = new card("Fire", "Blazing Hell", blazingHellFunctions, blazingHellStats, 5);
 
@@ -175,7 +184,7 @@ public class card {
 
 
         HashMap<String, Integer> rockThrowStats = new HashMap<>();
-        rockThrowStats.put("Damage", 4);
+        rockThrowStats.put("Damage", 40);
         String[] rockThrowFunctions = {"Damage"};
         card rockThrow = new card("Rock", "Rock Throw", rockThrowFunctions, rockThrowStats, 0);
 
@@ -183,7 +192,7 @@ public class card {
 
 
         HashMap<String, Integer> stoneStrikeStats = new HashMap<>();
-        stoneStrikeStats.put("Damage", 12);
+        stoneStrikeStats.put("Damage", 120);
         String[] stoneStrikeFunctions = {"Damage"};
         card stoneStrike = new card("Rock", "Stone Strike", stoneStrikeFunctions, stoneStrikeStats, 1);
 
@@ -191,24 +200,24 @@ public class card {
 
 
         HashMap<String, Integer> stalagmiteSmashStats = new HashMap<>();
-        stalagmiteSmashStats.put("Damage", 24);
+        stalagmiteSmashStats.put("Damage", 240);
         String[] stalagmiteSmashFunctions = {"Damage"};
         card stalagmiteSmash = new card("Rock", "Stalagmite Smash", stalagmiteSmashFunctions, stalagmiteSmashStats, 2);
 
 
 
 
-        HashMap<String, Integer> shaleStormStats = new HashMap<>();
-        shaleStormStats.put("Damage", 25);
-        shaleStormStats.put("Area", 1);
-        String[] shaleStormFunctions = {"Damage", "Area"};
-        card shaleStorm = new card("Rock", "Shale Storm", shaleStormFunctions, shaleStormStats, 3);
+        HashMap<String, Integer> sturdyDefenceStats = new HashMap<>();
+        sturdyDefenceStats.put("Block", 300);
+
+        String[] sturdyDefenceFunctions = {"Block"};
+        card sturdyDefence = new card("Rock", "Sturdy Defence", sturdyDefenceFunctions, sturdyDefenceStats, 3);
 
 
 
 
         HashMap<String, Integer> boulderThrowStats = new HashMap<>();
-        boulderThrowStats.put("Damage", 50);
+        boulderThrowStats.put("Damage", 500);
         String[] boulderThrowFunctions = {"Damage"};
         card boulderThrow = new card("Rock", "Boulder Throw", boulderThrowFunctions, boulderThrowStats, 3);
 
@@ -219,13 +228,13 @@ public class card {
 
 
         HashMap<String, Integer> splashStats = new HashMap<>();
-        splashStats.put("Damage", 4);
+        splashStats.put("Damage", 40);
         String[] splashFunctions = {"Damage"};
         card splash = new card("Aqua", "Splash", splashFunctions, splashStats, 0);
 
 
         HashMap<String, Integer> jetStreamStats = new HashMap<>();
-        jetStreamStats.put("Damage", 12);
+        jetStreamStats.put("Damage", 120);
         String[] jetStreamFunctions = {"Damage"};
         card jetStream = new card("Aqua", "Jet Stream", jetStreamFunctions, jetStreamStats, 1);
 
@@ -233,8 +242,8 @@ public class card {
 
 
         HashMap<String, Integer> iceSpikeStats = new HashMap<>();
-        iceSpikeStats.put("Damage", 30);
-        iceSpikeStats.put("Chill", 5);
+        iceSpikeStats.put("Damage", 300);
+        iceSpikeStats.put("Chill", 50);
         String[] iceSpikeFunctions = {"Damage", "Chill"};
         card iceSpike = new card("Aqua", "Ice Spike", iceSpikeFunctions, iceSpikeStats, 3);
 
@@ -242,8 +251,8 @@ public class card {
 
 
         HashMap<String, Integer> iceWallStats = new HashMap<>();
-        iceWallStats.put("Block", 50);
-        iceWallStats.put("Chill", 2);
+        iceWallStats.put("Block", 500);
+        iceWallStats.put("Chill", 20);
         String[] iceWallFunctions = {"Block", "Chill"};
         card iceWall = new card("Aqua", "Ice Wall", iceWallFunctions, iceWallStats, 3);
 
@@ -251,7 +260,7 @@ public class card {
 
 
         HashMap<String, Integer> freezeStats = new HashMap<>();
-        freezeStats.put("Chill", 10);
+        freezeStats.put("Chill", 100);
         String[] freezeFunctions = {"Chill"};
         card freeze = new card("Aqua", "Freeze", freezeFunctions, freezeStats, 2);
 
@@ -259,8 +268,8 @@ public class card {
 
 
         HashMap<String, Integer> permafrostStats = new HashMap<>();
-        permafrostStats.put("Damage", 75);
-        permafrostStats.put("Chill", 15);
+        permafrostStats.put("Damage", 750);
+        permafrostStats.put("Chill", 150);
         String[] permafrostFunctions = {"Damage", "Chill"};
         card permafrost = new card("Aqua", "Permafrost", permafrostFunctions, permafrostStats, 5);
 
@@ -273,14 +282,14 @@ public class card {
 
 
         HashMap<String, Integer> bandageStats = new HashMap<>();
-        bandageStats.put("Heal", 10);
+        bandageStats.put("Heal", 100);
         String[] bandageFunctions = {"Heal"};
         card bandage = new card("Life", "Bandage", bandageFunctions, bandageStats, 1);
 
 
         HashMap<String, Integer> poisionDartStats = new HashMap<>();
-        poisionDartStats.put("Damage", 6);
-        poisionDartStats.put("Poison", 3);
+        poisionDartStats.put("Damage", 60);
+        poisionDartStats.put("Poison", 30);
         String[] poisionDartFunctions = {"Damage", "Poison"};
         card poisionDart = new card("Life", "Poison Dart", poisionDartFunctions, poisionDartStats, 1);
 
@@ -288,8 +297,8 @@ public class card {
 
 
         HashMap<String, Integer> throwACobraStats = new HashMap<>();
-        throwACobraStats.put("Damage", 15);
-        throwACobraStats.put("Poison", 8);
+        throwACobraStats.put("Damage", 150);
+        throwACobraStats.put("Poison", 80);
         String[] throwACobraFunctions = {"Damage", "Poison"};
         card throwACobra = new card("Life", "Throw A Cobra", throwACobraFunctions, throwACobraStats, 2);
 
@@ -297,16 +306,21 @@ public class card {
 
 
         HashMap<String, Integer> trenStats = new HashMap<>();
-        trenStats.put("Strengthen", 4);
+        trenStats.put("Strengthen", 40);
         String[] trenFunctions = {"Strengthen"};
         card tren = new card("Life", "Tren", trenFunctions, trenStats, 1);
 
 
+        HashMap<String, Integer>  naturesBlessingStats = new HashMap<>();
+        naturesBlessingStats.put("Heal", 500);
+        String[] naturesBlessingFunctions = {"Heal"};
+        card naturesBlessing = new card("Life", "Natures Blessing", naturesBlessingFunctions, naturesBlessingStats, 2);
+
 
 
         HashMap<String, Integer> steroidsStats = new HashMap<>();
-        steroidsStats.put("Strengthen", 15);
-        steroidsStats.put("Heal", -35);
+        steroidsStats.put("Strengthen", 150);
+        steroidsStats.put("Heal", -350);
         String[] steroidsFunctions = {"Strengthen", "Heal"};
         card steroids = new card("Life", "Steroids", steroidsFunctions, steroidsStats, 2);
 
@@ -314,8 +328,8 @@ public class card {
 
 
         HashMap<String, Integer> forceOfNatureStats = new HashMap<>();
-        forceOfNatureStats.put("Damage", 40);
-        forceOfNatureStats.put("Heal", 40);
+        forceOfNatureStats.put("Damage", 400);
+        forceOfNatureStats.put("Heal", 400);
         String[] forceOfNatureFunctions = {"Damage", "Heal"};
         card forceOfNature = new card("Life", "Force of nature", forceOfNatureFunctions, forceOfNatureStats, 4);
 
@@ -326,7 +340,7 @@ public class card {
 
         // lightning cards
         HashMap<String, Integer> lightningStormStats = new HashMap<>();
-        lightningStormStats.put("Damage", 4);
+        lightningStormStats.put("Damage", 40);
         lightningStormStats.put("MultiStrike", 3);
         String[] lightningStormFunctions = {"Damage", "MultiStrike"};
         card lightningStrom = new card("Elec", "Lightning Storm", lightningStormFunctions, lightningStormStats, 1);
@@ -335,7 +349,7 @@ public class card {
 
 
         HashMap<String, Integer> zapStats = new HashMap<>();
-        zapStats.put("Damage", 4);
+        zapStats.put("Damage", 40);
         String[] zapFunctions = {"Damage"};
         card zap = new card("Elec", "Zap", zapFunctions, zapStats, 0);
 
@@ -343,7 +357,7 @@ public class card {
 
 
         HashMap<String, Integer> thunderSlamStats = new HashMap<>();
-        thunderSlamStats.put("Damage", 24);
+        thunderSlamStats.put("Damage", 240);
         String[] thunderSlamFunctions = {"Damage"};
         card thunderSlam = new card("Elec", "Thunder Slam", thunderSlamFunctions, thunderSlamStats, 2);
 
@@ -351,20 +365,32 @@ public class card {
 
 
         HashMap<String, Integer> forkedLightningStats = new HashMap<>();
-        forkedLightningStats.put("Damage", 24);
-        forkedLightningStats.put("Area", 1);
-        String[] forkedLightningFunctions = {"Damage", "Area"};
+        forkedLightningStats.put("Damage", 240);
+        forkedLightningStats.put("Multistrike", 2);
+        String[] forkedLightningFunctions = {"Damage", "Multistrike"};
         card forkedLightning = new card("Elec", "Forked Lightning", forkedLightningFunctions, forkedLightningStats, 3);
 
 
 
 
         HashMap<String, Integer> shockingShieldStats = new HashMap<>();
-        shockingShieldStats.put("Damage", 2);
-        shockingShieldStats.put("Area", 1);
-        shockingShieldStats.put("Block", 12);
-        String[] shockingShieldFunctions = {"Damage", "Area", "Block"};
+        shockingShieldStats.put("Damage", 20);
+
+        shockingShieldStats.put("Block", 200);
+        String[] shockingShieldFunctions = {"Damage", "Block"};
         card shockingShield = new card("Elec", "Shocking Shield", shockingShieldFunctions, shockingShieldStats, 1);
+
+
+
+
+        //Admin cards
+
+        HashMap<String, Integer> deathStats = new HashMap<>();
+        deathStats.put("Damage", 1000000);
+        String[] deathFunctions = {"Damage"};
+        card death = new card("Null", "death", deathFunctions, deathStats, 0);
+
+
 
 
 
