@@ -32,10 +32,16 @@ public class Enemy {
     public int getLevel(){
         return level;
     }
+    @Override
+    public String toString(){
+        return "health:" + health + " Damage:"+ damage + " Name:" + name + " Element:" + element + " Level:"+ level;
+    }
     public static void initEnemies() {
 
+        //Null Enemy
+        Enemy none = new Enemy(0, 0, "", "", 0);
+        enemies.put("", none);
         //Fire Enemies
-
         Enemy fire1 = new Enemy(10, 10, "Volcanic Slug", "fire", 1);
         enemies.put("fire1", fire1);
         Enemy fire2 = new Enemy(10, 10, "Fire Snake", "fire", 2);

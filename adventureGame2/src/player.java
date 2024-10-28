@@ -1,19 +1,21 @@
 public class player{
 
     private int health;
+    private int maxHealth;
 
     private int level;
 
-    private String name;
-
-    public player(int health, int level, String name){
+    public player(int health, int level){
         this.health = health;
         this.level = level;
-        this.name = name;
+        maxHealth = health;
     }
 
     public void takeDamage(int damage){
         health -= damage;
+        if(health==0){
+            death();
+        }
     }
 
     public int getHealth(){
@@ -23,9 +25,13 @@ public class player{
     public int getLevel(){
         return level;
     }
-
-    public String getName(){
-        return name;
+    public void death(){
+        System.out.println("You have died   :Ɛ");
+        System.out.println("RIP bozo");
+        System.exit(0);
     }
-
+    @Override
+    public String toString(){
+        return "health: " + health + "/"+maxHealth+"level: "+level;
+    }
 }
