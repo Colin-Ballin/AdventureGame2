@@ -133,7 +133,7 @@ public class card {
 
 
         HashMap<String, Integer> flameStats = new HashMap<>();
-        flameStats.put("Damage", 10);
+        flameStats.put("Damage", 1);
         flameStats.put("Burn", 10);
         String[] flameFunctions = {"Damage", "Burn"};
         card Flame = new card("Fire", "Flame", flameFunctions, flameStats, 1);

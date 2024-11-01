@@ -163,17 +163,31 @@ public class Main {
             drawHand(hand, fightDeck, 5);
             int cardChoice;
             card card;
-            printInfo(battle.get1(), player);
-            printCardChoice(hand);
-            System.out.println("Please choose your first card");
-            cardChoice = scanner.nextInt();
-            card = chooseCard(cardChoice, hand);
-            cardAction(card, battle.get1(), player);
-            clearHand(hand);
-            if(battle.get1().getHealth()>0){
-                player.takeDamage(battle.get1().getDamage());
-                System.out.println(battle.get1().getName()+" hit you for "+battle.get1().getDamage()+" damage!");
+            if(battle.get1().getDotLength()>0) {
+                battle.get1().takeDamage(battle.get1().getDotStrength());
+                battle.get1().shortenDot();
+                System.out.println(battle.get1().getName()+"took "+battle.get1().getDotStrength()+" damage from effects");
             }
+            if(battle.get1().getHealth()>0) {
+                printInfo(battle.get1(), player);
+                printCardChoice(hand);
+                System.out.println("Please choose your first card");
+                cardChoice = scanner.nextInt();
+                card = chooseCard(cardChoice, hand);
+                cardAction(card, battle.get1(), player);
+                clearHand(hand);
+            }
+            if(battle.get1().getHealth()>0){
+                if(player.getArmour()>battle.get1().getDamage()){
+                    System.out.println("You blocked the enemy's attack");
+                }
+                else {
+                    player.takeDamage(battle.get1().getDamage());
+                    System.out.println(battle.get1().getName() + " hit you for " + battle.get1().getDamage() + " damage!");
+                }
+                player.removeArmour();
+            }
+            clearHand(hand);
         }
         System.out.println("You have defeated the "+battle.get1().getName());
     }

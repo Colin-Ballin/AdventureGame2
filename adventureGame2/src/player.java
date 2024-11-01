@@ -45,6 +45,9 @@ public class player{
     public void addArmour(int num){
         armour += num;
     }
+    public void removeArmour(){
+        armour = 0;
+    }
     public int getArmour(){
         return armour;
     }
