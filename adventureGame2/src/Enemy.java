@@ -7,12 +7,16 @@ public class Enemy {
     private String name;
     private String element;
     private int level;
+    private int dotLength;
+    private int dotStrength;
     public Enemy(int health, int damage, String name, String element, int level){
         this.health = health;
         this.damage = damage;
         this.name = name;
         this.element = element;
         this.level = level;
+        dotLength = 0;
+        dotStrength = 0;
     }
     public int getDamage(){
         return damage;
@@ -23,6 +27,21 @@ public class Enemy {
     public void takeDamage(int num){
         health -= num;
     }
+    public int getDotLength(){
+        return dotLength;
+    }
+    public int getDotStrength(){
+        return dotStrength;
+    }
+    public void shortenDot(){
+        dotLength --;
+    }
+    public void addDotLength(int x){
+        dotLength += x;
+    }
+    public void addDotStrength(int x){
+        dotStrength += x;
+    }
     public String getName(){
         return name;
     }
@@ -31,6 +50,9 @@ public class Enemy {
     }
     public int getLevel(){
         return level;
+    }
+    public void reduceDamage(int num){
+        damage -= num;
     }
     @Override
     public String toString(){
