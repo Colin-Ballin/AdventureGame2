@@ -67,6 +67,6 @@ public class player{
     }
     @Override
     public String toString(){
-        return "health: " + health + "/"+maxHealth+"level: "+level;
+        return "health: " + health + "/"+maxHealth+" level: "+level;
     }
 }

@@ -8,10 +8,10 @@ public class Main {
         Stack<card> deck = new Stack<>();
         ArrayList<card> hand = new ArrayList<>();
         card.makingCards();
-        deck.add(card.cards.get("Strike"));
-        deck.add(card.cards.get("Strike"));
-        deck.add(card.cards.get("Strike"));
-        deck.add(card.cards.get("Strike"));
+        deck.add(card.cards.get("Flame"));
+        deck.add(card.cards.get("Flame"));
+        deck.add(card.cards.get("Flame"));
+        deck.add(card.cards.get("Flame"));
         deck.add(card.cards.get("Block"));
         deck.add(card.cards.get("Block"));
         deck.add(card.cards.get("Block"));
@@ -169,15 +169,6 @@ public class Main {
             cardChoice = scanner.nextInt();
             card = chooseCard(cardChoice, hand);
             cardAction(card, battle.get1(), player);
-            hand.remove(cardChoice-1);
-            if(battle.get1().getHealth()>0) {
-                printInfo(battle.get1(), player);
-                printCardChoice(hand);
-                System.out.println("Please choose your second card");
-                cardChoice = scanner.nextInt();
-                card = chooseCard(cardChoice, hand);
-                cardAction(card, battle.get1(), player);
-            }
             clearHand(hand);
             if(battle.get1().getHealth()>0){
                 player.takeDamage(battle.get1().getDamage());

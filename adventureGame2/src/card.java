@@ -86,17 +86,17 @@ public class card {
         String description = "";
         int len = functions.length;
         for(int x = 0; x < len; x ++){
-            description = functions[x] + "; " + useValues.get(functions[x]) + " ";
+            description = description + functions[x] + ": " + useValues.get(functions[x]) + " ";
         }
 
-        return " Element; " + element + " Name; " + name + " " + description;
+        return " Element: " + element + " Name: " + name + " " + description;
     }
     public static void makingCards(){
         // Basic cards
         HashMap<String, Integer> strikeStats = new HashMap<>();
         strikeStats.put("Damage", 100);
         String[] strikeFunctions = {"Damage"};
-        card Strike = new card("Null", "Strike", strikeFunctions, strikeStats, 1);
+        card Strike = new card("N/A", "Strike", strikeFunctions, strikeStats, 1);
         cards.put("Strike", Strike);
 
 
@@ -104,7 +104,7 @@ public class card {
         HashMap<String, Integer> blockStats = new HashMap<>();
         blockStats.put("Block", 80);
         String[] blockFunctions = {"Block"};
-        card Block = new card("Null", "Block", blockFunctions, blockStats, 1);
+        card Block = new card("N/A", "Block", blockFunctions, blockStats, 1);
         cards.put("Block", Block);
 
 
@@ -116,7 +116,7 @@ public class card {
         HashMap<String, Integer> bombStats = new HashMap<>();
         bombStats.put("Damage", 500);
         String[] bombFunctions = {"Damage"};
-        card Bomb = new card("Null", "Bomb", bombFunctions, bombStats, 2);
+        card Bomb = new card("N/A", "Bomb", bombFunctions, bombStats, 2);
         cards.put("Bomb", Bomb);
 
 
@@ -133,7 +133,7 @@ public class card {
 
 
         HashMap<String, Integer> flameStats = new HashMap<>();
-        flameStats.put("Damage", 100);
+        flameStats.put("Damage", 10);
         flameStats.put("Burn", 10);
         String[] flameFunctions = {"Damage", "Burn"};
         card Flame = new card("Fire", "Flame", flameFunctions, flameStats, 1);
@@ -335,9 +335,8 @@ public class card {
 
         // lightning cards
         HashMap<String, Integer> lightningStormStats = new HashMap<>();
-        lightningStormStats.put("Damage", 40);
-        lightningStormStats.put("MultiStrike", 3);
-        String[] lightningStormFunctions = {"Damage", "MultiStrike"};
+        lightningStormStats.put("Damage", 120);
+        String[] lightningStormFunctions = {"Damage"};
         card LightningStorm = new card("Elec", "Lightning Storm", lightningStormFunctions, lightningStormStats, 1);
         cards.put("LightningStorm", LightningStorm);
 
@@ -360,9 +359,8 @@ public class card {
 
 
         HashMap<String, Integer> forkedLightningStats = new HashMap<>();
-        forkedLightningStats.put("Damage", 240);
-        forkedLightningStats.put("Multistrike", 2);
-        String[] forkedLightningFunctions = {"Damage", "Multistrike"};
+        forkedLightningStats.put("Damage", 480);
+        String[] forkedLightningFunctions = {"Damage"};
         card ForkedLightning = new card("Elec", "Forked Lightning", forkedLightningFunctions, forkedLightningStats, 3);
         cards.put("ForkedLightning", ForkedLightning);
 
@@ -375,20 +373,6 @@ public class card {
         String[] shockingShieldFunctions = {"Damage", "Block"};
         card ShockingShield = new card("Elec", "Shocking Shield", shockingShieldFunctions, shockingShieldStats, 1);
         cards.put("ShockingShield", ShockingShield);
-
-
-
-        //Admin cards
-
-        HashMap<String, Integer> deathStats = new HashMap<>();
-        deathStats.put("Damage", 1000000);
-        String[] deathFunctions = {"Damage"};
-        card Death = new card("Null", "death", deathFunctions, deathStats, 0);
-        cards.put("Death", Death);
-
-
-
-
 
     }
 
